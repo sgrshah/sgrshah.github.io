@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://sgrshah.github.io/atom.xml" rel="self"/>
   <link href="http://sgrshah.github.io/"/>
-  <updated>2013-06-15T22:42:53-04:00</updated>
+  <updated>2013-06-16T14:13:20-04:00</updated>
   <id>http://sgrshah.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The inevitable Excel-Ruby comparison]]></title>
+    <link href="http://sgrshah.github.io/blog/2013/06/16/the-inevitable-excel-v-ruby-comparison/"/>
+    <updated>2013-06-16T09:42:00-04:00</updated>
+    <id>http://sgrshah.github.io/blog/2013/06/16/the-inevitable-excel-v-ruby-comparison</id>
+    <content type="html"><![CDATA[<p>This blog post is partially inspired by Carlos Lazo&rsquo;s comparison of C++ and Ruby, which you can read <a href="http://cjlwired.github.io/">here</a>.</p>
+
+<p>For the past 2.5 years, I have lived in Microsoft Excel. This is not a joke. I spent, on average, 50-55 hours a week in the office. More than 50% of that time was with a spreadsheet open, so that amounts to at least 3125 hours. Yikes!</p>
+
+<p>After my first few weeks of Ruby, I can&rsquo;t help but make analogies to the world of Excel and compare Excel&rsquo;s functionality to the way object oriented programming languages work.</p>
+
+<p>Ruby is an object oriented programming language, which means it focuses on the interaction of objects rather than a sequence of tasks like in procedural programming languages. Three main components of an object oriented programming language are Classes, Objects, and Methods.</p>
+
+<h2>Classes and Methods</h2>
+
+<p>In Excel, think of cells, in general, as a Class. The Class called &lsquo;Cells&rsquo; has specific characteristics and behaviors that it can execute, which are defined by its Methods. What is an example of a Method that the &lsquo;Cell&rsquo; Class would have? The &lsquo;Cell&rsquo; Class would definitely have the &lsquo;sum&rsquo; Method, which would take in parameters (maybe an array of other Objects) and calculate it&rsquo;s sum. Below is my basic interpretation of what a &lsquo;Cell&rsquo; Class might look like with it&rsquo;s first two Methods, the initialize Method and the sum Method:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Cell</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:value</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span>
+</span><span class='line'>      <span class="vi">@value</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">mySum</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span class='line'>      <span class="vi">@value</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#resets value to zero</span>
+</span><span class='line'>      <span class="n">array</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">cell</span><span class="o">|</span>
+</span><span class='line'>          <span class="vi">@value</span> <span class="o">+=</span> <span class="n">cell</span> <span class="c1">#performs addition</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Although Microsoft Excel is pretty much a closed source program, it does give hints from time to time on it&rsquo;s underlying structure. For example, in this picture you can see that Excel&rsquo;s SUM function can take multiple parameters by simply selecting a cell and dragging. To me, this is like creating an array as a parameter.</p>
+
+<p><img src="../images/excelpic1.jpg" alt="Image of excel sum method" /></p>
+
+<h2>Viewing each cell as an Object</h2>
+
+<p>Each individual cell that you see on a spreadsheet could be thought of as an instance of the &lsquo;Cell&rsquo; Class, more commonly referred to as an Object. Each cell instance has a separate location on the computer&rsquo;s memory, has access to all of the Methods of the &lsquo;Cell&rsquo; Class, but the instance variables within each cell can contain different values depending on what you put in. So, think of the &lsquo;Cell&rsquo; Class as a template for each of the individual cells on your spreadsheet.</p>
+
+<p>The way I imagine Excel to work is that all the cells you see in your spreadsheet are instantiated when you create a new file. In the following code, I&rsquo;ve created a basic spreadsheet with one column and four rows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a1</span> <span class="o">=</span> <span class="no">Cell</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">a2</span> <span class="o">=</span> <span class="no">Cell</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">a3</span> <span class="o">=</span> <span class="no">Cell</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">a4</span> <span class="o">=</span> <span class="no">Cell</span><span class="o">.</span><span class="n">new</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Based on the previous code we wrote for the &lsquo;Cell&rsquo; Class, each of these cells is unique, but can perform the sum Method in the same as every other cell. Now, let&rsquo;s add some values and use the sum Method:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a1</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#This is like typing in a value to a cell</span>
+</span><span class='line'><span class="n">a2</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="mi">5</span> <span class="c1">#This is like typing in a math operation into a cell</span>
+</span><span class='line'><span class="n">a3</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span>
+</span><span class='line'><span class="n">a3</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">[</span><span class="n">a1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="n">a2</span><span class="o">.</span><span class="n">value</span><span class="o">]</span><span class="p">)</span> <span class="c1">#This is like over-riding a cell&#39;s value using a sum Function by clicking and dragging multiple cells</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I haven&rsquo;t yet figured out how to show IRB output through markdown, but I can assure you that the answer for the last line of code was indeed 30.</p>
+
+<p>There will always be a special place in my heart for Excel. Eventually, it will have to make room for Ruby and other languages as I become a more and more proficient programmer. At some point, I think it would be really interesting to read a little bit of Excel&rsquo;s source code and compare my conception of it&rsquo;s inner workings to reality!</p>
+
+<p>-Sagar</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Transaction consultant turned tech trainee]]></title>
