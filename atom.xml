@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://sgrshah.github.io/atom.xml" rel="self"/>
   <link href="http://sgrshah.github.io/"/>
-  <updated>2013-06-10T14:12:12-04:00</updated>
+  <updated>2013-06-15T22:42:53-04:00</updated>
   <id>http://sgrshah.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -14,11 +14,36 @@
 
   
   <entry>
-    <title type="html"><![CDATA[My first post]]></title>
-    <link href="http://sgrshah.github.io/blog/2013/06/10/my-first-post/"/>
-    <updated>2013-06-10T14:10:00-04:00</updated>
-    <id>http://sgrshah.github.io/blog/2013/06/10/my-first-post</id>
-    <content type="html"><![CDATA[<p>Hello everyone!</p>
+    <title type="html"><![CDATA[Transaction consultant turned tech trainee]]></title>
+    <link href="http://sgrshah.github.io/blog/2013/06/15/transaction-consultant-turned-tech-trainee/"/>
+    <updated>2013-06-15T22:21:00-04:00</updated>
+    <id>http://sgrshah.github.io/blog/2013/06/15/transaction-consultant-turned-tech-trainee</id>
+    <content type="html"><![CDATA[<p>For my first blog post I feel obligated to briefly explain why I am here at the Flatiron School learning computer programming.</p>
+
+<h2>Cues from the work I enjoyed doing</h2>
+
+<p>As an analyst who worked on corporate mergers and acquisitions, I loved building and improving complex financial models. For some odd reason I actually enjoyed handling large excel data-sets with complex schema, designing scalable and dynamic models, and making tools more efficient and replicable.</p>
+
+<p>I always felt I was adding the most value to my company and our clients when I was creating well-designed models that others could easily understand and use. As a result, I decided that I wanted to expand on these skills and explore broader ways of creating interesting and useful tools more generally. Naturally, I gravitated to computer programming.</p>
+
+<h2>Creativity through code</h2>
+
+<p>The opportunity to be creative every day is very important to me. Avi Flombaum, Flatiron’s fearless leader, always says that computer programming is all about expression; that it is a creative pursuit. Everyday Avi shares with us quotes from his favorite developers. Of all the ones I’ve heard over the past two weeks, my favorite is this one from “Why the lucky stiff”</p>
+
+<blockquote><p>When you don&rsquo;t create things, you become defined by your tastes rather than
+ability. Your tastes only narrow and exclude people, so create.</p></blockquote>
+
+<p>My goal for this course is to create as much as I can, whether it’s building a complex web-application, writing an open-source Ruby-gem, or just sharing something I learned through this blog.</p>
+
+<h2>A quick word on doing passionate work</h2>
+
+<p>People who have yet to find their ‘calling’ sometimes wrongly believe that their passions are latent, un-manifested parts of their identity that they’ve yet to unearth and discover. I felt this way for many years, and it put a lot of pressure on me. Big questions like “what is my passion?” and “how can I make a career out of it?” yielded either no answers, or too many (both equally paralyzing).</p>
+
+<p>Doing passionate work is less about finding the things you are passionate about, and more about working really hard to become good at what you do. It’s easy to say, “I can’t do this, I don’t think this is my passion,” when things get difficult, even though there was a really good reason you decided to pursue that endeavor in the first place.</p>
+
+<p>Computer programming is going to get really, really hard over the next few months. There will be times when I won’t understand a concept, or will be doing tasks that seem trivial at the moment. But, fortunately I know that my interest, enthusiasm, and love of programming will only grow as I become more and more proficient.</p>
+
+<p>-Sagar</p>
 ]]></content>
   </entry>
   
