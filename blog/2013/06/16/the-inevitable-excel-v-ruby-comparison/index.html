@@ -120,7 +120,7 @@
 </span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span>
 </span><span class='line'>      <span class="vi">@value</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">mySum</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
 </span><span class='line'>      <span class="vi">@value</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#resets value to zero</span>
 </span><span class='line'>      <span class="n">array</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">cell</span><span class="o">|</span>
 </span><span class='line'>          <span class="vi">@value</span> <span class="o">+=</span> <span class="n">cell</span> <span class="c1">#performs addition</span>
@@ -132,7 +132,7 @@
 
 <p>Although Microsoft Excel is pretty much a closed source program, it does give hints from time to time on it&rsquo;s underlying structure. For example, in this picture you can see that Excel&rsquo;s SUM function can take multiple parameters by simply selecting a cell and dragging. To me, this is like creating an array as a parameter.</p>
 
-<p><img src="../images/excelpic1.jpg" alt="Image of excel sum method" /></p>
+<p><img src="/Users/flatiron/Development/code/sgrshah-002.github.io/source/images/excelpic1.jpg" alt="Image of excel sum method" /></p>
 
 <h2>Viewing each cell as an Object</h2>
 
