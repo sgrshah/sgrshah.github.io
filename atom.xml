@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://sgrshah.github.io/atom.xml" rel="self"/>
   <link href="http://sgrshah.github.io/"/>
-  <updated>2013-06-17T09:23:19-04:00</updated>
+  <updated>2013-06-17T18:35:24-04:00</updated>
   <id>http://sgrshah.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -89,7 +89,7 @@
 
 <p>Although Microsoft Excel is pretty much a closed source program, it does give hints from time to time on it&rsquo;s underlying structure. For example, in this picture you can see that Excel&rsquo;s SUM function can take multiple parameters by simply selecting a cell and dragging. To me, this is like creating an array as a parameter.</p>
 
-<p><img src="http://sgrshah.github.io/Users/flatiron/Development/code/sgrshah-002.github.io/source/images/excelpic1.jpg" alt="Image of excel sum method" /></p>
+<p><img src="http://sgrshah.github.io/images/excelpic1.jpg" alt="Image of excel sum method" /></p>
 
 <h2>Viewing each cell as an Object</h2>
 
