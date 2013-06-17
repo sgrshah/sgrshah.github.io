@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://sgrshah.github.io/atom.xml" rel="self"/>
   <link href="http://sgrshah.github.io/"/>
-  <updated>2013-06-16T14:13:20-04:00</updated>
+  <updated>2013-06-16T23:08:15-04:00</updated>
   <id>http://sgrshah.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby Testing]]></title>
+    <link href="http://sgrshah.github.io/blog/2013/06/16/ruby-testing/"/>
+    <updated>2013-06-16T14:52:00-04:00</updated>
+    <id>http://sgrshah.github.io/blog/2013/06/16/ruby-testing</id>
+    <content type="html"><![CDATA[<p>This weekend I scoured speakerdeck.com for a presentation related to the topics that we&rsquo;re beginning to cover in class. I came across the following slide deck from Emily Price titled <a href="https://speakerdeck.com/duien/testing-ruby">&ldquo;Testing Ruby using RSPEC with Factory Girl and Autotest&rdquo;</a>.</p>
+
+<p>The first two weeks of class we&rsquo;ve really focused on just getting our programs to work and getting familiar with Ruby. However, late last week we began covering the concept of test-driven development. Emily Price&rsquo;s slide deck gives a high level overview of the topic.</p>
+
+<h2>Testing best practices</h2>
+
+<p>The presentation&rsquo;s author emphasized the following best practices for testing:</p>
+
+<ul style="padding-left:40px">
+<li>write tests first: testing is a continuous process of making your code fail, fixing it so it passes, refactoring, and repeating.</li>
+<li>test your edge cases: there are always scenarios in which your code will fail that you may not think of right off the bat. Get creative and try to create tests for those scenarios that might break your code or give you strange results.</li>
+<li>test behavior, not implementation: this essentially means that you want to test if the code produces the desired result, not necessarily how it produces it produces the result. </li>
+</ul>
+
+
+<h2>What the heck is RSPEC, Factory Girl, and Autotest anyway?</h2>
+
+<p>RSPEC is a testing tool for Ruby, and as with all things Ruby it was designed to &ldquo;make Test-Driven Development a productive and enjoyable experience.&rdquo; Factory Girl and Autotest are both gems that work with RSPEC to aid with testing. For example, Autotest is a gem that automatically runs your tests each time you change or save a file. It allows for continuous, quick testing so that you rarely have to open up the browser to see what&rsquo;s happening to your code.</p>
+
+<p>OK, so I&rsquo;m not an expert in test-driven development yet. But, as they say, &ldquo;the beginning of wisdom is to call things by their right names.&rdquo; Now I know what RSPEC, Factory Girl, and Autotest are and have some best practices to refer to. Thanks Emily for your speakerdeck presentation!</p>
+
+<p>-Sagar</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The inevitable Excel-Ruby comparison]]></title>
