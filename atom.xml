@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://sgrshah.github.io/atom.xml" rel="self"/>
   <link href="http://sgrshah.github.io/"/>
-  <updated>2013-06-17T18:37:43-04:00</updated>
+  <updated>2013-06-23T10:44:02-04:00</updated>
   <id>http://sgrshah.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sinatra organization]]></title>
+    <link href="http://sgrshah.github.io/blog/2013/06/23/sinatra-organization/"/>
+    <updated>2013-06-23T08:48:00-04:00</updated>
+    <id>http://sgrshah.github.io/blog/2013/06/23/sinatra-organization</id>
+    <content type="html"><![CDATA[<p>This blog delves into the organization patterns of larger code-bases. Up until now, we&rsquo;ve been working on relatively small projects that include one application file, and maybe 3-4 class and module files. To explore the file structure of larger projects, I will be looking through an open source Sinatra project called So-Nice. So-Nice is a simple web interface to control iTunes, Spotify, and other music players. The project&rsquo;s code-base can be found <a href="https://github.com/sunny/so-nice">here</a>.</p>
+
+<h2>Overall structure</h2>
+
+<p>The top level of the application&rsquo;s code-base is comprised of two folders and five main files.</p>
+
+<p>The files:</p>
+
+<ul style="padding-left:40px">
+<li> Gemfile: The Gemfile lists all the application&#8217;s dependencies. Dependencies are all the gems that the application relies on. This file is particularly important in this application, because it loads the &#8216;anyplayer&#8217; gem, which supports the various music players, including Spotify and iTunes. Other dependencies include &#8216;sinatra,&#8217; &#8216;haml,&#8217; &#8216;xml-simple,&#8217; &#8216;json,&#8217; and &#8216;thin.&#8217; All of these gems are sourced from <a href ="http://rubygems.org">Rubygems.org</a></li> 
+<li> Gemfile.lock: This file is a snapshot of all the gems and versions that were installed. This way you know the exact versions of all the gems that you used when your application last worked. This is especially important and useful when you are sharing your work with collaborators. Others won&#8217;t have to guess what veresion of the dependencies they should install.</li>
+<li> README.md: The readme file contains a brief description of what the web application does and how to install and use it on your machine.</li>
+<li> config.ru: This is the rackup file that the Sinatra application needs to include in its root directory. The &#8216;run&#8217; contained in this config file can be called on anything that responds to a .call method. The application itself is also &#8216;required&#8217; through the config file. In this case, the application is &#8216;sonice.rb&#8217;</li>
+<li> sonice.rb: This file is the Ruby application that is loaded by the config.ru rackup file. </li>
+</ul>
+
+
+<p>The folders:</p>
+
+<ul style="padding-left:40px">
+<li> public: Sinatra, by default, looks for &#8216;assets,&#8217; such as CSS files and images, in the &#8216;public&#8217; folder. So-Nice&#8217;s public folder contains its stylesheet, a picture, and various javascript files.</li>
+<li> views: The &#8216;views&#8217; folder contains one file, called &#8216;index.haml.&#8217; Haml is a markup language that produces clean, well-structured HTML. Haml can also handle inline code, like Ruby. Sinatra, by default, looks for webpage templates in the &#8216;views&#8217; folder.</li>
+</ul>
+
+
+<h2>Useful resources on the subject</h2>
+
+<p>The following is a list of useful resources to help understand the various components of the Sinatra file structure.</p>
+
+<ul style="padding-left:40px">
+<li><a href="http://net.tutsplus.com/tutorials/ruby/an-introduction-to-haml-and-sinatra/">An introduction to Haml and Sinatra</a></li>
+<li><a href="http://rubylearning.com/blog/a-quick-introduction-to-rack/">A quick introduction to Rack</a></li>
+<li><a href="http://gembundler.com/v1.3/rationale.html">Bundler&#8217;s purpose and rationale</a></li>
+
+</ul>
+
+
+<p>-Sagar</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ruby Testing]]></title>
