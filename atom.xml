@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://sgrshah.github.io/atom.xml" rel="self"/>
   <link href="http://sgrshah.github.io/"/>
-  <updated>2013-07-02T07:50:16-04:00</updated>
+  <updated>2013-07-02T13:11:41-04:00</updated>
   <id>http://sgrshah.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -14,10 +14,13 @@
 
   
   <entry>
+    
     <title type="html"><![CDATA[Traditional economics vs. Seth Godin's economics]]></title>
     <link href="http://sgrshah.github.io/blog/2013/07/01/traditional-economics-vs-seth-godins-economics/"/>
+    
     <updated>2013-07-01T20:55:00-04:00</updated>
     <id>http://sgrshah.github.io/blog/2013/07/01/traditional-economics-vs-seth-godins-economics</id>
+    
     <content type="html"><![CDATA[<p>Today I met someone I really admire, Seth Godin. About 3 years ago, my cousin introduced me to Seth&rsquo;s blog and some of his writing. I read his book Linchpin, which really transformed the way I thought about job satisfaction, personal and societal value creation, and, more broadly, how the economy (and economic theory) would change in the years to come.</p>
 
 <p>In college class after class, I was schooled in the classical understanding of how the economy worked. Basically, what you learn in classical economic theory of production is that a country&rsquo;s growth is determined by the growth rate in capital, labor, and productivity (generalized as improvements in technology). Labor, used in some optimal combination with capital, would create growth. Labor was thought of in the same light as machinery. It was an interchangeable commodity.</p>
@@ -46,13 +49,17 @@
 
 <p>-Sagar</p>
 ]]></content>
+    
   </entry>
   
   <entry>
+    
     <title type="html"><![CDATA[Sinatra organization]]></title>
     <link href="http://sgrshah.github.io/blog/2013/06/23/sinatra-organization/"/>
+    
     <updated>2013-06-23T08:48:00-04:00</updated>
     <id>http://sgrshah.github.io/blog/2013/06/23/sinatra-organization</id>
+    
     <content type="html"><![CDATA[<p>This blog delves into the organization patterns of larger code-bases. Up until now, we&rsquo;ve been working on relatively small projects that include one application file, and maybe 3-4 class and module files. To explore the file structure of larger projects, I will be looking through an open source Sinatra project called So-Nice. So-Nice is a simple web interface to control iTunes, Spotify, and other music players. The project&rsquo;s code-base can be found <a href="https://github.com/sunny/so-nice">here</a>.</p>
 
 <h2>Overall structure</h2>
@@ -92,13 +99,17 @@
 
 <p>-Sagar</p>
 ]]></content>
+    
   </entry>
   
   <entry>
+    
     <title type="html"><![CDATA[Ruby Testing]]></title>
     <link href="http://sgrshah.github.io/blog/2013/06/16/ruby-testing/"/>
+    
     <updated>2013-06-16T14:52:00-04:00</updated>
     <id>http://sgrshah.github.io/blog/2013/06/16/ruby-testing</id>
+    
     <content type="html"><![CDATA[<p>This weekend I scoured speakerdeck.com for a presentation related to the topics that we&rsquo;re beginning to cover in class. I came across the following slide deck from Emily Price titled <a href="https://speakerdeck.com/duien/testing-ruby">&ldquo;Testing Ruby using RSPEC with Factory Girl and Autotest&rdquo;</a>.</p>
 
 <p>The first two weeks of class we&rsquo;ve really focused on just getting our programs to work and getting familiar with Ruby. However, late last week we began covering the concept of test-driven development. Emily Price&rsquo;s slide deck gives a high level overview of the topic.</p>
@@ -122,13 +133,17 @@
 
 <p>-Sagar</p>
 ]]></content>
+    
   </entry>
   
   <entry>
+    
     <title type="html"><![CDATA[The inevitable Excel-Ruby comparison]]></title>
     <link href="http://sgrshah.github.io/blog/2013/06/16/the-inevitable-excel-v-ruby-comparison/"/>
+    
     <updated>2013-06-16T09:42:00-04:00</updated>
     <id>http://sgrshah.github.io/blog/2013/06/16/the-inevitable-excel-v-ruby-comparison</id>
+    
     <content type="html"><![CDATA[<p>This blog post is partially inspired by Carlos Lazo&rsquo;s comparison of C++ and Ruby, which you can read <a href="http://cjlwired.github.io/">here</a>.</p>
 
 <p>For the past 2.5 years, I have lived in Microsoft Excel. This is not a joke. I spent, on average, 50-55 hours a week in the office. More than 50% of that time was with a spreadsheet open, so that amounts to at least 3125 hours. Yikes!</p>
@@ -208,13 +223,17 @@
 
 <p>-Sagar</p>
 ]]></content>
+    
   </entry>
   
   <entry>
+    
     <title type="html"><![CDATA[Transaction consultant turned tech trainee]]></title>
     <link href="http://sgrshah.github.io/blog/2013/06/15/transaction-consultant-turned-tech-trainee/"/>
+    
     <updated>2013-06-15T22:21:00-04:00</updated>
     <id>http://sgrshah.github.io/blog/2013/06/15/transaction-consultant-turned-tech-trainee</id>
+    
     <content type="html"><![CDATA[<p>For my first blog post I feel obligated to briefly explain why I am here at the Flatiron School learning computer programming.</p>
 
 <h2>Cues from the work I enjoyed doing</h2>
@@ -242,6 +261,7 @@ ability. Your tastes only narrow and exclude people, so create.</p></blockquote>
 
 <p>-Sagar</p>
 ]]></content>
+    
   </entry>
   
 </feed>
