@@ -4,7 +4,7 @@
   <title><![CDATA[Sagar Shah's Blog]]></title>
   <link href="http://sgrshah.github.io/atom.xml" rel="self"/>
   <link href="http://sgrshah.github.io/"/>
-  <updated>2013-07-05T16:24:13-04:00</updated>
+  <updated>2013-07-21T23:48:38-04:00</updated>
   <id>http://sgrshah.github.io/</id>
   <author>
     <name><![CDATA[Sagar Shah]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Dealing with the blank screen problem...start with a blank sheet of paper instead.]]></title>
+    <link href="http://sgrshah.github.io/blog/2013/07/21/dealing-with-the-blank-screen-problem-dot-dot-dot-start-with-a-blank-sheet-of-paper-instead/"/>
+    
+    <updated>2013-07-21T20:11:00-04:00</updated>
+    <id>http://sgrshah.github.io/blog/2013/07/21/dealing-with-the-blank-screen-problem-dot-dot-dot-start-with-a-blank-sheet-of-paper-instead</id>
+    
+    <content type="html"><![CDATA[<p>When you first start learning web development frameworks like Rails, it can be really hard to know where to get started. There are simply too many problems to think about at once. And, there are a lot of steps between the “rails new” command you start off with and the end product with robust functionality that you desire. My advice is to start by drawing; don’t start typing away code just yet because you’re more likely to get confused/frustrated and make mistakes. Because the space on a page is limited it forces you to think about a limited number of problems at once.</p>
+
+<p>One advantage of drawing is that various elements of your Rails application start revealing themselves to you. For example, let’s say you start by drawing your app’s views, specifically the forms. It’s easier to conceptualize what the website is going to look like and how the user will interact with it rather than conceptualizing the models and associations (the hard stuff that drives how the app will work).</p>
+
+<p>I’ve found that you start noticing new classes/models/tables when you draw views and forms. The elements of the form that might need separate functionality are usually separate classes. The form inputs that don’t need additional functionality are probably not new classes, but just attributes of the top-level class/model. In the first image below, for example, &ldquo;assignment&rdquo; is the main model/class of concern and &ldquo;body&rdquo; is an attribute of each instance of assignment. However, &ldquo;resources&rdquo; might be its own separate class/model because it may have additional functionality and other associations.</p>
+
+<p><img src="http://sgrshah.github.io/images/drawing2.jpg">
+<img src="http://sgrshah.github.io/images/drawing3.jpg"></p>
+
+<p>Once you have these forms drawn out you can ask yourself the following questions: How is the user going to arrive to this form? Where is the user going once he fills this form out? When you answer these questions, you can start figuring out whether you need to scaffold or whether you want just certain routes. Also, it becomes clearer what information you’re controller’s will have to provide you, or have to be able to handle, through this process.</p>
+
+<p>In addition, once you start seeing model elements from your views, you can also start seeing what the associations are going to look like. For example, are you asking for more than one of the same thing in your form? If so, then there’s probably a has_many/belongs_to relationship. Start writing that stuff down on your piece of paper.</p>
+
+<p><img src="http://sgrshah.github.io/images/drawing1.jpg"></p>
+
+<h2>UMLs &ndash; don&rsquo;t do it as a beginner</h2>
+
+<p>UML stands for Unified Modeling Language. UML is software for drawing connections between classes/models. It&rsquo;s an alternative to drawing. For a good example, check out <a href="http://creately.com/">creately.com</a>. After a conversation with a fellow classmate and teaching assistant, I think using a UML is a bad idea for beginners. I&rsquo;m sure that UMLs are very helpful for projects that need a lot of advanced planning. But, for beginner &lsquo;hackers&rsquo; who are trying to implement small and then build onto what they have, it can be a huge waste of time. You end up spending a lot of time figuring out how the UML software works and what the special symbols mean instead of actually making progress on your Rails application.</p>
+
+<p>TL;DR &ndash; DRAW when you don&rsquo;t know what to do in your Rails apps.</p>
+
+<p>-Sagar</p>
+]]></content>
+    
+  </entry>
   
   <entry>
     

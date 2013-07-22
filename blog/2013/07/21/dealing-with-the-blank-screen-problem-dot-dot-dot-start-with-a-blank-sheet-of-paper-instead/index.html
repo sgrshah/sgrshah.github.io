@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Sinatra organization - Sagar Shah's Blog</title>
+  <title>Dealing with the blank screen problem...start with a blank sheet of paper instead. - Sagar Shah's Blog</title>
   <meta name="author" content="Sagar Shah">
 
   
-  <meta name="description" content="This blog delves into the organization patterns of larger code-bases. Up until now, we&rsquo;ve been working on relatively small projects that &hellip;">
+  <meta name="description" content="When you first start learning web development frameworks like Rails, it can be really hard to know where to get started. There are simply too many &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sgrshah.github.io/blog/2013/06/23/sinatra-organization">
+  <link rel="canonical" href="http://sgrshah.github.io/blog/2013/07/21/dealing-with-the-blank-screen-problem-dot-dot-dot-start-with-a-blank-sheet-of-paper-instead">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Sagar Shah's Blog" type="application/atom+xml">
@@ -77,7 +77,7 @@
   <header>
   
     
-      <h1 class="entry-title">Sinatra Organization</h1>
+      <h1 class="entry-title">Dealing With the Blank Screen problem...start With a Blank Sheet of Paper Instead.</h1>
     
   
     
@@ -94,49 +94,33 @@
   
 
 
-<time datetime="2013-06-23T08:48:00-04:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2013</time>
+<time datetime="2013-07-21T20:11:00-04:00" pubdate data-updated="true">Jul 21<span>st</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>This blog delves into the organization patterns of larger code-bases. Up until now, we&rsquo;ve been working on relatively small projects that include one application file, and maybe 3-4 class and module files. To explore the file structure of larger projects, I will be looking through an open source Sinatra project called So-Nice. So-Nice is a simple web interface to control iTunes, Spotify, and other music players. The project&rsquo;s code-base can be found <a href="https://github.com/sunny/so-nice">here</a>.</p>
+<div class="entry-content"><p>When you first start learning web development frameworks like Rails, it can be really hard to know where to get started. There are simply too many problems to think about at once. And, there are a lot of steps between the “rails new” command you start off with and the end product with robust functionality that you desire. My advice is to start by drawing; don’t start typing away code just yet because you’re more likely to get confused/frustrated and make mistakes. Because the space on a page is limited it forces you to think about a limited number of problems at once.</p>
 
-<h2>Overall structure</h2>
+<p>One advantage of drawing is that various elements of your Rails application start revealing themselves to you. For example, let’s say you start by drawing your app’s views, specifically the forms. It’s easier to conceptualize what the website is going to look like and how the user will interact with it rather than conceptualizing the models and associations (the hard stuff that drives how the app will work).</p>
 
-<p>The top level of the application&rsquo;s code-base is comprised of two folders and five main files.</p>
+<p>I’ve found that you start noticing new classes/models/tables when you draw views and forms. The elements of the form that might need separate functionality are usually separate classes. The form inputs that don’t need additional functionality are probably not new classes, but just attributes of the top-level class/model. In the first image below, for example, &ldquo;assignment&rdquo; is the main model/class of concern and &ldquo;body&rdquo; is an attribute of each instance of assignment. However, &ldquo;resources&rdquo; might be its own separate class/model because it may have additional functionality and other associations.</p>
 
-<p>The files:</p>
+<p><img src="/images/drawing2.jpg">
+<img src="/images/drawing3.jpg"></p>
 
-<ul style="padding-left:40px">
-<li> Gemfile: The Gemfile lists all the application&#8217;s dependencies. Dependencies are all the gems that the application relies on. This file is particularly important in this application, because it loads the &#8216;anyplayer&#8217; gem, which supports the various music players, including Spotify and iTunes. Other dependencies include &#8216;sinatra,&#8217; &#8216;haml,&#8217; &#8216;xml-simple,&#8217; &#8216;json,&#8217; and &#8216;thin.&#8217; All of these gems are sourced from <a href ="http://rubygems.org">Rubygems.org</a></li> 
-<li> Gemfile.lock: This file is a snapshot of all the gems and versions that were installed. This way you know the exact versions of all the gems that you used when your application last worked. This is especially important and useful when you are sharing your work with collaborators. Others won&#8217;t have to guess what veresion of the dependencies they should install.</li>
-<li> README.md: The readme file contains a brief description of what the web application does and how to install and use it on your machine.</li>
-<li> config.ru: This is the rackup file that the Sinatra application needs to include in its root directory. The &#8216;run&#8217; contained in this config file can be called on anything that responds to a .call method. The application itself is also &#8216;required&#8217; through the config file. In this case, the application is &#8216;sonice.rb&#8217;</li>
-<li> sonice.rb: This file is the Ruby application that is loaded by the config.ru rackup file. </li>
-</ul>
+<p>Once you have these forms drawn out you can ask yourself the following questions: How is the user going to arrive to this form? Where is the user going once he fills this form out? When you answer these questions, you can start figuring out whether you need to scaffold or whether you want just certain routes. Also, it becomes clearer what information you’re controller’s will have to provide you, or have to be able to handle, through this process.</p>
 
+<p>In addition, once you start seeing model elements from your views, you can also start seeing what the associations are going to look like. For example, are you asking for more than one of the same thing in your form? If so, then there’s probably a has_many/belongs_to relationship. Start writing that stuff down on your piece of paper.</p>
 
-<p>The folders:</p>
+<p><img src="/images/drawing1.jpg"></p>
 
-<ul style="padding-left:40px">
-<li> public: Sinatra, by default, looks for &#8216;assets,&#8217; such as CSS files and images, in the &#8216;public&#8217; folder. So-Nice&#8217;s public folder contains its stylesheet, a picture, and various javascript files.</li>
-<li> views: The &#8216;views&#8217; folder contains one file, called &#8216;index.haml.&#8217; Haml is a markup language that produces clean, well-structured HTML. Haml can also handle inline code, like Ruby. Sinatra, by default, looks for webpage templates in the &#8216;views&#8217; folder.</li>
-</ul>
+<h2>UMLs &ndash; don&rsquo;t do it as a beginner</h2>
 
+<p>UML stands for Unified Modeling Language. UML is software for drawing connections between classes/models. It&rsquo;s an alternative to drawing. For a good example, check out <a href="http://creately.com/">creately.com</a>. After a conversation with a fellow classmate and teaching assistant, I think using a UML is a bad idea for beginners. I&rsquo;m sure that UMLs are very helpful for projects that need a lot of advanced planning. But, for beginner &lsquo;hackers&rsquo; who are trying to implement small and then build onto what they have, it can be a huge waste of time. You end up spending a lot of time figuring out how the UML software works and what the special symbols mean instead of actually making progress on your Rails application.</p>
 
-<h2>Useful resources on the subject</h2>
-
-<p>The following is a list of useful resources to help understand the various components of the Sinatra file structure.</p>
-
-<ul style="padding-left:40px">
-<li><a href="http://net.tutsplus.com/tutorials/ruby/an-introduction-to-haml-and-sinatra/">An introduction to Haml and Sinatra</a></li>
-<li><a href="http://rubylearning.com/blog/a-quick-introduction-to-rack/">A quick introduction to Rack</a></li>
-<li><a href="http://gembundler.com/v1.3/rationale.html">Bundler&#8217;s purpose and rationale</a></li>
-
-</ul>
-
+<p>TL;DR &ndash; DRAW when you don&rsquo;t know what to do in your Rails apps.</p>
 
 <p>-Sagar</p>
 </div>
@@ -161,7 +145,7 @@
   
 
 
-<time datetime="2013-06-23T08:48:00-04:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2013</time>
+<time datetime="2013-07-21T20:11:00-04:00" pubdate data-updated="true">Jul 21<span>st</span>, 2013</time>
       
 
 
@@ -169,7 +153,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sgrshah.github.io/blog/2013/06/23/sinatra-organization/" data-via="" data-counturl="http://sgrshah.github.io/blog/2013/06/23/sinatra-organization/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sgrshah.github.io/blog/2013/07/21/dealing-with-the-blank-screen-problem-dot-dot-dot-start-with-a-blank-sheet-of-paper-instead/" data-via="" data-counturl="http://sgrshah.github.io/blog/2013/07/21/dealing-with-the-blank-screen-problem-dot-dot-dot-start-with-a-blank-sheet-of-paper-instead/" >Tweet</a>
   
   
   
@@ -178,10 +162,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/06/16/ruby-testing/" title="Previous Post: Ruby Testing">&laquo; Ruby Testing</a>
+        <a class="basic-alignment left" href="/blog/2013/07/01/traditional-economics-vs-seth-godins-economics/" title="Previous Post: Traditional economics vs. Seth Godin's economics">&laquo; Traditional economics vs. Seth Godin's economics</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/07/01/traditional-economics-vs-seth-godins-economics/" title="Next Post: Traditional economics vs. Seth Godin's economics">Traditional economics vs. Seth Godin's economics &raquo;</a>
       
     </p>
   </footer>
